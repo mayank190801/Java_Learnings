@@ -18,16 +18,19 @@ public class jdbc_01 {
             String url = "jdbc:postgresql://localhost:5432/demo";
             String uname = "postgres";
             String pass = "0000";
-
+            String sql = "select sname from student where sid = 1";
 
             Class.forName("org.postgresql.Driver"); //optional line that you can skip it
             Connection con = DriverManager.getConnection(url, uname,pass);
-
-            //looks pretty cool till now
-            //We need to check now
             System.out.println("Connection Established");
 
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            System.out.println(rs.next());  //moves us to the next record - earlier it was at the header
+            System.out.println(rs.getString(1));
 
+            con.close();
+            System.out.println("Connection Closed");
 
         }catch(Exception e){
             System.out.println(e);
