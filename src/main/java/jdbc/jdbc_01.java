@@ -29,8 +29,22 @@ public class jdbc_01 {
             System.out.println(rs.next());  //moves us to the next record - earlier it was at the header
             System.out.println(rs.getString(1));
 
+            //so from here onwards I can try to add some stuff inside this bad boy
+            String insertSql = "insert into student values(3, 'Bhavna', 101)";
+            Statement st2 = con.createStatement();
+            int result = st2.executeUpdate(insertSql);
+            System.out.println(result);
+
+            //executeUpdate basically - updates something inside the database
             con.close();
             System.out.println("Connection Closed");
+
+
+            //now your task is to basically setup - CRUD operations on this little student table present in postgresSQL
+            //this should be a task for your learning purposes
+            //Was able to implement CRUD pretty easily - there are some steps and class and interfaces you have to learn in JDBC
+            //These will automatically as you come across various projects, so ignore those for now brother -
+            //Focus on microservices and learning springboot at its finest for now
 
         }catch(Exception e){
             System.out.println(e);
