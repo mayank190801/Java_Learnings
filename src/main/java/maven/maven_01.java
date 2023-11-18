@@ -2,7 +2,6 @@ package maven;
 
 public class maven_01 {
     public static void main(String[] args) {
-
        //So this is maven first tutorial basically,
        //Maven is basically used to manage all the jar files you require for different tools you want to code with
        //Also it provides has lifecycles inside which you can directly from side-panel
@@ -30,5 +29,6 @@ public class maven_01 {
 
 
         //Now I would like to setup Maven on my setup and see how it works and stuff - (shouldn't be too complicated)
+        //Not required now - let's figure it out later if we have to
     }
 }
